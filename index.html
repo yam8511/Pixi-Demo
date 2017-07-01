@@ -3,10 +3,20 @@
 <head>
     <title>Pixi Demo</title>
     <script src="./pixi.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 </head>
 <body>
     <button onclick="toggle()">OK</button>
     <script>
+      $.ajax({
+        url: 'http://data.kcg.gov.tw/api/action/datastore_search?resource_id=92290ee5-6e61-456f-80c0-249eae2fcc97',
+        success: function (data) {
+          console.info('data', data)
+        },
+        error: function (err) {
+          console.info('err', err)
+        }
+      })
       var app = new PIXI.Application(800, 600, {backgroundColor : 0x1099bb});
       document.body.appendChild(app.view);
 
