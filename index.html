@@ -9,9 +9,9 @@
     <button onclick="toggle()">OK</button>
     <script>
       $.ajax({
-        url: 'https://raw.githubusercontent.com/neil605164/JS_Kaohsiung_Travel/master/JSON/data.json',
+        url: 'https://raw.githubusercontent.com/yam8511/Pixi-Demo/master/data.json',
         success: function (data) {
-          console.info('data', data)
+          console.info('data', JSON.parse(data))
         },
         error: function (err) {
           console.info('err', err)
