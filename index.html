@@ -5,6 +5,7 @@
     <script src="./pixi.js"></script>
 </head>
 <body>
+    <button onclick="toggle()">OK</button>
     <script>
       var app = new PIXI.Application(800, 600, {backgroundColor : 0x1099bb});
       document.body.appendChild(app.view);
@@ -26,7 +27,9 @@
       // just for fun, let's rotate mr rabbit a little
       // delta is 1 if running at 100% performance
       // creates frame-independent tranformation
-        bunny.rotation += 0.1 * delta;
+        if (zz) {
+          bunny.rotation += 0.1 * delta;
+        }
       });
 
       bunny.interactive = true;
@@ -61,6 +64,18 @@
               this.x = newPosition.x;
               this.y = newPosition.y;
           }
+      }
+
+
+      var zz = true;
+      function toggle() {
+        console.log(zz)
+        zz = !zz;
+        // if (zz) {
+        //   app.ticker.start();
+        // } else {
+        //   app.ticker.stop();
+        // }
       }
     </script>
 </body>
